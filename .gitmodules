@@ -1,0 +1,3 @@
+[submodule "RM2023-Core"]
+	path = RM2023-Core
+	url = git@github.com:hkustenterprize/RM2023-Core.git
