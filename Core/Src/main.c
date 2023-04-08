@@ -110,6 +110,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  extern void startRTOS(void);
+  startRTOS();
   while (1)
   {
     /* USER CODE END WHILE */

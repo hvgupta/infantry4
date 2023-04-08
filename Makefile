@@ -74,7 +74,7 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c \
 Core/Src/system_stm32f4xx.c
 
 CPP_SOURCES = \
-$(wildcard Src/*.cpp)
+$(wildcard Core/Src/*.cpp)
 
 # ASM sources
 ASM_SOURCES =  \
