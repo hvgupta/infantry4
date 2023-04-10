@@ -9,15 +9,13 @@
  */
 #include <cstdint>
 #include "FreeRTOS.h"
-#include "RosCommProtocol.hpp"
 #include "gpio.h"
 #include "main.h"
 #include "RosComm.hpp"
 #include "task.h"
 #include "tim.h"
-#include "DR16.hpp"
-#include "DJIMotor.hpp"
 #include "usart.h"
+#include "DJIMotor.hpp"
 
 
 StackType_t uxBlinkTaskStack[configMINIMAL_STACK_SIZE];
@@ -88,11 +86,14 @@ void com(void *)
     cvHeader.protocolID = RosComm::CVMODE_MSG;
 
     cvMode.color = RosComm::CVMode::RED;
-    cvMode.curCVMode = RosComm::CVMode::MANUAL;
+    cvMode.curCVMode = Core::Communication::RosComm::CVMode::MANULA;
     cvMode.bulletSpeed = 12.34f;
 
     registerProcessFunction(RosComm::GIMBAL_CMD, processGimbal);
     registerProcessFunction(RosComm::SHOOTER_CMD, processShooter);
+
+    DJIMotor::DJIMotor& motor = DJIMotor::getMotor(0x201);
+    motor.setOutputCurrent(-10000);
     while(1)
     {
         RosComm::transmit(chassisHeader, reinterpret_cast<uint8_t*>(&chassisStatus));
@@ -111,8 +112,7 @@ void startUserTasks()
 {
     using namespace Core::Communication;
     RosComm::init();
-    DR16::init();
-    DJIMotor::init();
+    // DJIMotor::init();
     xTaskCreateStatic(blink, "blink", configMINIMAL_STACK_SIZE, NULL, 0, uxBlinkTaskStack, &xBlinkTaskTCB);
     xTaskCreateStatic(com, "com", configMINIMAL_STACK_SIZE, NULL, 0, comTestStack, &comTestTCB);
 }
