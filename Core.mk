@@ -201,7 +201,6 @@ $(BUILD_DIR):
 clean:
 	@echo -e "\033[2K\033[96mCleaning up...\033[m"
 	@-rm -fR $(BUILD_DIR)
-	@echo -e "\033[m"
 
 # Rebuild
 rebuild: 
