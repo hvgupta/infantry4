@@ -13,8 +13,6 @@
 #include "main.h"
 #include "task.h"
 
-// #include "DJIMotor.hpp"
-
 StackType_t uxBlinkTaskStack[configMINIMAL_STACK_SIZE];
 StaticTask_t xBlinkTaskTCB;
 
@@ -25,7 +23,7 @@ void blink(void *pvPara)
     while (true)
     {
         HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
-        HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_1);
+        HAL_GPIO_TogglePin(LASER_GPIO_Port, LASER_Pin);
         vTaskDelay(500);
     }
 }
