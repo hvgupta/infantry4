@@ -9,12 +9,15 @@
  */
 
 #include "FreeRTOS.h"
+#include "Matrix.hpp"
 #include "gpio.h"
 #include "main.h"
 #include "task.h"
 
 StackType_t uxBlinkTaskStack[configMINIMAL_STACK_SIZE];
 StaticTask_t xBlinkTaskTCB;
+
+Matrixf<3, 3> matrix;
 
 void blink(void *pvPara)
 {
