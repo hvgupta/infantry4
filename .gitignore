@@ -18,6 +18,9 @@
 *.rd
 *.map
 
+# Track the DSP Static library 
+!Middlewares/ST/ARM/DSP/Lib/*.a
+
 # Debug files
 *.dSYM/
 *.su
