@@ -157,6 +157,20 @@
         #endif
 #endif
 
+#define USE_SERIAL_INTERBOARD 0
+#if USE_SERIAL_INTERBOARD
+    #define INTERBOARD_MASTER 0
+    #define INTERBOARD_SLAVE 0
+    #define INTERBOARD_COMM_UART huart2
+    #define SERIAL_INTERBOARD_TASK_STACK_SIZE 256
+    #define SERIAL_INTERBOARD_TX_BUFFER_SIZE 128
+    #define SERIAL_INTERBOARD_RX_BUFFER_SIZE 256
+    #define SERIAL_INTERBOARD_TX_QUEUE_LENGTH 8
+    #define SERIAL_INTERBOARD_RX_TIMEOUT 5
+    #define SERIAL_INTERBOARD_UART huart6
+    #define SERIAL_INTERBOARD_DMA_BUFFER_ATTRIBUTE __attribute__((used, section(".D1")))
+#endif
+
 /*====================
    REFEREE SYSTEM COMM
  *====================*/
