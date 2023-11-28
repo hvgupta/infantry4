@@ -1,3 +1,4 @@
-[submodule "RM2023-Core"]
-	path = RM2023-Core
-	url = git@github.com:hkustenterprize/RM2023-Core.git
+[submodule "RM2024-Core"]
+	path = RM2024-Core
+	url = git@github.com:hkustenterprize/RM2024-Core.git
+	branch = develop
