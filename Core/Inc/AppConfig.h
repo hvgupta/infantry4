@@ -89,7 +89,7 @@
 /*====================
    DJI MOTOR CONFIG
  *====================*/
-#define USE_DJI_MOTOR 1
+#define USE_DJI_MOTOR 0
 #if USE_DJI_MOTOR
     #define USE_DJI_MOTOR_TYPE_A 1
     #define USE_DJI_MOTOR_TYPE_B 1
@@ -114,8 +114,9 @@
     #endif
 #endif
 
-#define USE_MF9015 1
-#if USE_MF9015
+#define USE_LKMFMotor 0
+#if USE_LKMFMotor
+#define LKMFMotor_CAN_MANAGER_INDEX 0
 #endif
 
 /*====================
