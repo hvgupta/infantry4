@@ -89,16 +89,16 @@
 /*====================
    DJI MOTOR CONFIG
  *====================*/
-#define USE_DJI_MOTOR 0
+#define USE_DJI_MOTOR 1
 #if USE_DJI_MOTOR
-    #define USE_DJI_MOTOR_TYPE_A 0
-    #define USE_DJI_MOTOR_TYPE_B 0
+    #define USE_DJI_MOTOR_TYPE_A 1
+    #define USE_DJI_MOTOR_TYPE_B 1
 #endif
 
 /*====================
    DM4310 MOTOR CONFIG
  *====================*/
- #define USE_DM4310 0
+ #define USE_DM4310 1
  #if USE_DM4310
 /*4310 id setting, must be the same as configrator*/
     #define DM4310_ID_CUSTOM 0
@@ -112,6 +112,10 @@
         #define DEFAULT_V_MAX 30.0f
         #define DEFAULT_T_MAX 10.0f
     #endif
+#endif
+
+#define USE_MF9015 1
+#if USE_MF9015
 #endif
 
 /*====================
@@ -134,10 +138,10 @@
 /*====================
    FDCAN CONFIG
  *====================*/
-#define FDCAN_CUSTOM 0
-#if FDCAN_CUSTOM
-    #define FDCAN_NUM 1
-    #define FDCAN_FILTER_NUM 8
+#define CAN_CUSTOM 0
+#if CAN_CUSTOM
+    #define CAN_NUM 1
+    #define CAN_FILTER_NUM 8
     #define CAN_FILTER_SLAVE_START 14
 #endif
 
